@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report Complaint - Secure HER AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2 class="page-title">Submit a Complaint</h2>
+
+<div class="form-container">
+    <form id="complaintForm">
+        
+        <label>Name (Optional)</label>
+        <input type="text" id="name" placeholder="Enter your name or leave blank for anonymous">
+
+        <label>Complaint Type</label>
+        <select id="type">
+            <option>Harassment</option>
+            <option>Discrimination</option>
+            <option>Bullying</option>
+            <option>Other</option>
+        </select>
+
+        <label>Description</label>
+        <textarea id="description" required></textarea>
+        <label>Upload Evidence (optional)</label>
+        <input type="file" id="evidence" accept="image/*,.pdf">
+        <button type="submit" class="btn">Submit Complaint</button>
+        <label>Location (City/Area)</label>
+        <input type="text" id="location" placeholder="Enter your city or area" required>
+        <label>
+        <input type="checkbox" id="emergencyToggle">
+        🚨 This is an emergency
+        </label>
+        <button type="button" onclick="getLocation()">📍 Share Live Location</button>
+        <p id="liveLocationText"></p>
+    </form>
+
+    <p id="message"></p>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

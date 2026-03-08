@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <p style="text-align:center; color:gray;">
+SecureHER AI – Smart Complaint Monitoring System
+</p>
+    <title>Admin Dashboard - Secure HER AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2 class="page-title">Admin Dashboard</h2>
+
+<div class="dashboard">
+   <div class="summary-cards">
+    <div class="card">
+        <h3 id="totalCount">0</h3>
+        <p>Total Complaints</p>
+    </div>
+    <div class="card">
+        <h3 id="highCount">0</h3>
+        <p>High Priority</p>
+    </div>
+    <div class="card">
+        <h3 id="resolvedCount">0</h3>
+        <p>Resolved</p>
+    </div>
+</div>
+    <table>
+        <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Location</th>
+        <th>Emergency</th>
+        <th>Live Location</th>
+        <th>Evidence</th>
+        <th>AI Category</th>
+        <th>Risk Score</th>
+        <th>Tracking ID</th>
+        <th>Action</th>
+        <th>Time</th>
+    </tr>
+</thead>
+        <tbody id="complaintTable"></tbody>
+    </table>
+    <h3>Admin Action Log</h3>
+<ul id="adminLog"></ul>
+    <h4>Complaint Analytics</h4>
+    <h4>Complaint Analytics</h4>
+
+<div style="max-width: 500px; margin: 20px auto;">
+    <canvas id="complaintChart"></canvas>
+</div>
+
+<h5 style="text-align:center;">Monthly Trend</h5>
+
+<div style="max-width: 500px; margin: 20px auto;">
+    <canvas id="trendChart"></canvas>
+</div>
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

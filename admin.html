@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <script>
+        let password = prompt("Enter Admin Password:");
+
+        if (password !== "admin123") {
+            alert("Access Denied!");
+            window.location.href = "index.html";
+        }
+    </script>
+
+</head>
+<body>
+<h1>Admin Dashboard</h1>
+
+<h2 class="page-title">Admin Login</h2>
+
+<div class="form-container">
+    <input type="text" id="adminUser" placeholder="Username">
+    <input type="password" id="adminPass" placeholder="Password">
+    <button onclick="adminLogin()">Login</button>
+    <p id="loginMessage"></p>
+</div>
+<h3>All Complaints</h3>
+<div id="complaintList"></div>
+
+<h4>Complaint Analysis</h4>
+<p id="analysis"></p>
+<script src="js/script.js"></script>
+<script>
+let complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+let container = document.getElementById("complaintList");
+
+let pendingCount = 0;
+let solvedCount = 0;
+
+
+complaints.forEach((c, index) => {
+
+    if (c.status === "Pending") pendingCount++;
+    else solvedCount++;
+
+    let div = document.createElement("div");
+    div.style.border = "1px solid black";
+    div.style.margin = "10px";
+    div.style.padding = "10px";
+
+    div.innerHTML = `
+        <p><b>Complaint:</b> ${c.message}</p>
+        <p><b>Status:</b> ${c.status}</p>
+        <p><b>Time:</b> ${c.time}</p>
+        <button onclick="markSolved(${index})">Mark as Solved</button>
+        <button onclick="deleteComplaint(${index})">Delete</button>
+    `;
+
+    container.appendChild(div);
+});
+
+document.getElementById("analysis").innerHTML =
+    "Pending: " + pendingCount + " | Solved: " + solvedCount;
+
+function markSolved(index) {
+    complaints[index].status = "Solved";
+    localStorage.setItem("complaints", JSON.stringify(complaints));
+    location.reload();
+}
+
+function deleteComplaint(index) {
+    complaints.splice(index, 1);
+    localStorage.setItem("complaints", JSON.stringify(complaints));
+    location.reload();
+}
+</script>
+</body>
+</html>

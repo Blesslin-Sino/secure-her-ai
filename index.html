@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure HER AI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Secure HER AI</h1>
+    <p>Safe. Confidential. Empowered.</p>
+    <div class="buttons">
+        <a href="report.html" class="btn">Report Now</a>
+        <a href="dashboard.html" class="btn secondary">Admin Dashboard</a>
+    </div>
+</header>
+
+<section class="about">
+    <h2>About the Platform</h2>
+    <p>
+        Secure HER AI is an AI-powered confidential reporting platform 
+        designed to help women safely report harassment, discrimination,
+        bullying, or misconduct without fear.
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Secure HER AI | AI for HER Hackathon</p>
+</footer>
+<!-- Chatbot Button -->
+<div class="chatbot-btn" onclick="toggleChat()">
+    💬
+</div>
+
+<!-- Chatbot Box -->
+<div class="chatbox" id="chatbox">
+    <div class="chat-header">
+        Secure HER Support
+        <span onclick="toggleChat()">✖</span>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+        <div class="bot-message">
+            Hello 💜 I’m here to support you. Are you safe right now?
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type your message...">
+        <button onclick="startVoice()">🎤</button>
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
